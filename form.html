@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PUP-OUS ACE Form</title>
+    <link rel="icon" href="img/PUPLogo.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+
+    <body>
+        <!-- Navbar -->
+        <header>
+            <div class="logo-container">
+                <a class="logo" href="https://www.pup.edu.ph/">
+                    <img src="img/PUPLogo.png" alt="PUP Logo">
+                </a>
+            </div>
+            <div class="titles-container">
+                <h1 id="titlepup">Polytechnic University of the Philippines</h1>
+                <h2 id="titleous">Open University System</h2>
+            </div>
+        </header>
+    
+        <div class="form-box">
+            <form name="ACE Form" method="post" action="https://script.google.com/macros/s/AKfycbzbvi3g0Vs0lpRtgX7WX5dwZ-R5409ZGiK6eTgJ3RuT84BNpJdZxceEe0PDEHEDAtCr/exec" onsubmit="return aceForm()">
+                <div class="semester">
+                    <p>I hereby apply for a change in my enrollment this:</p><br>
+                    <label for="semesterSelect">Semester:</label>
+                    <select id="semesterSelect" name="semesterSelect" onchange="toggleSemesterSelect()">
+                        <option value="first">First Semester</option>
+                        <option value="second">Second Semester</option>
+                        <option value="summer">Summer Semester</option>
+                    </select><br><br>
+    
+                    <div class="input-container">
+                        <label for="startYear">School Year:</label>
+                        <div class="input-field">
+                            <input type="text" id="startYear" name="startYear" placeholder="Start Year" required>
+                        </div>
+                        <label for="endYear">up to</label>
+                        <div class="input-field">
+                            <input type="text" id="endYear" name="endYear" placeholder="End Year" required>
+                        </div>
+                    </div>
+    
+                    <div class="reason">
+                        <label for="reason">Reason for Change:</label>
+                        <div class="input-field">
+                            <input type="text" id="reason" name="reason" placeholder="Reason" required>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="semester">
+                    <p>Course/s /Scheduled to be</p><br>
+                    <label for="semesterChangeSelect">Semester:</label>
+                    <select id="semesterChangeSelect" name="semesterChangeSelect" onchange="toggleSemesterChange()">
+                        <option value=""></option>
+                        <option value="changed">Changed</option>
+                        <option value="drop">Drop</option>
+                        <option value="added">Added</option>
+                    </select><br><br>
+                <div class="changed">
+                <div class="fromYrSection input-container">
+                    <label for="fromYrSection">From Year and Section</label>
+                    <div class="input-field">
+                        <input type="text" name="fromYrSection" placeholder="Year and Section" required>
+                    </div>
+                    <label for="fromCode">Code</label>
+                    <div class="input-field">
+                        <input type="text" name="fromCode" placeholder="Code" required>
+                    </div>
+                </div>
+    
+                <div class="fromCourseTitleChange coursetitle">
+                    <label for="fromCourseTitleChange">Course Title:</label>
+                    <div class="input-field">
+                        <input type="text" name="fromCourseTitleChange" placeholder="Course Title:" required><br><br>
+                    </div>
+                </div>
+    
+                <div class="fromUnit unit">
+                    <label for="fromUnit">Unit:</label>
+                    <div class="input-field">
+                        <input type="text" name="fromUnit" placeholder="Unit" required><br><br>
+                    </div>
+                </div>
+    
+         
+                <div class="toYrSection input-container">
+                    <label for="ToYrSection">To Year and Section</label>
+                    <div class="input-field">
+                        <input type="text" name="ToYrSection" placeholder="Year and Section" required>
+                    </div>
+                    <label for="toCode">Code</label>
+                    <div class="input-field">
+                        <input type="text" name="toCode" placeholder="Code" required>
+                    </div>
+                </div>
+    
+                <div class="toCourseTitleChange">
+                    <label for="toCourseTitleChange">Course Title:</label>
+                    <div class="input-field">
+                        <input type="text" name="toCourseTitleChange" placeholder="Course Title:" required><br><br>
+                    </div>
+                </div>
+           
+                <div class="toUnit">
+                    <label for="toUnit">Unit:</label>
+                    <div class="input-field">
+                        <input type="text" name="toUnit" placeholder="Unit" required><br><br>
+                    </div>
+                </div>
+            </div>
+            <div class="other">
+                <div class="input-container">
+                    <label for="YrSection">Year and Section</label>
+                    <div class="input-field">
+                        <input type="text" name="YrSection" placeholder="Year and Section" required>
+                    </div>
+                    <label for="code">Code</label>
+                    <div class="input-field">
+                        <input type="text" name="code" placeholder="Code" required>
+                    </div>
+                </div>
+    
+                <div class="coursetitle">
+                    <label for="courseTitle">Course Title:</label>
+                    <div class="input-field">
+                        <input type="text" name="courseTitleOther" placeholder="Course Title:" required><br><br>
+                    </div>
+                </div>
+    
+                <div class="unit">
+                    <label for="unit">Unit:</label>
+                    <div class="input-field">
+                        <input type="text" name="unit" placeholder="Unit" required><br><br>
+                    </div>
+                </div>
+            </div>
+            <div class="input-container">
+                <label for="NoUnits">No. of Original Units</label>
+                <div class="input-field">
+                    <input type="number" id="NoUnits" name="NoUnits" min="1" max="99" required>
+                </div>
+                <label for="unitsadded">No. of Units Added</label>
+                <div class="input-field">
+                    <input type="number" id="unitsadded" name="unitsadded" min="1" max="99" required>
+                </div>
+                <label for="totalunits">Total No. of Units Enrolled</label>
+                <div class="input-field">
+                    <input type="number" id="totalunits" name="totalunits" min="1" max="99"  required>
+                </div>
+            </div>
+            </div>
+            <div class="button-container">
+                <br>
+                <button type="submit" class="submit-btn" name="signin">Submit</button>
+              </div>
+        </div>
+    </body>
+</html>
